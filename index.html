@@ -112,11 +112,20 @@ section{position:relative;padding-block:64px}
 .checks li{display:flex;align-items:center;gap:10px;font-weight:500;font-size:16px}
 .checks .ico{flex:none;width:24px;height:24px;border-radius:50%;background:var(--mustard);color:var(--navy);display:grid;place-items:center}
 .checks .ico svg{width:14px;height:14px}
+.hero-img{position:relative}
+.hero-seal{position:absolute;z-index:2;left:0;bottom:10%;width:92px;height:92px;border-radius:50%;background:var(--mustard);color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:"Archivo Black",sans-serif;font-size:10px;line-height:1.15;text-transform:uppercase;box-shadow:0 6px 16px rgba(0,0,0,.25);transform:rotate(-8deg)}
+.hero-seal b{font-size:30px;line-height:.9;font-weight:400}
+.stats{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stats li{background:rgba(244,236,216,.06);border:1px solid rgba(244,236,216,.14);border-radius:14px;padding:12px 14px;display:flex;align-items:baseline;gap:8px}
+.stats b{font-family:"Archivo Black",sans-serif;font-weight:400;color:var(--yellow);font-size:28px;line-height:1}
+.stats span{font-size:14px;line-height:1.25;color:var(--cream)}
+@media (max-width:899px){.hero .pill{font-size:10.5px;letter-spacing:.06em;white-space:nowrap}}
+.guarantee-line strong{color:var(--yellow);font-size:16px}
 .proof{background:var(--navy-3);margin-top:40px}
 .proof ul{list-style:none;margin:0 auto;padding:18px 12px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:820px;text-align:center}
 .proof li{display:flex;flex-direction:column;align-items:center;gap:4px;padding-inline:4px}
 .proof li+li{border-left:1px solid rgba(244,236,216,.14)}
-.proof .num{font-family:"Archivo Black",sans-serif;color:var(--yellow);font-size:clamp(20px,6vw,32px);line-height:1}
+.proof .num{font-family:"Archivo Black",sans-serif;color:var(--yellow);font-size:clamp(16px,4.4vw,32px);line-height:1;white-space:nowrap}
 .proof .lab{font-size:12px;line-height:1.3;color:var(--cream);opacity:.88}
 @media (min-width:900px){
   .hero{padding-top:56px}
@@ -124,8 +133,9 @@ section{position:relative;padding-block:64px}
   .hero-img img{transform:scale(1.12)}
   .hero-img{margin:0;max-width:none;grid-column:2;grid-row:1 / span 2}
   .hero-text{grid-column:1}
-  .checks{grid-template-columns:repeat(3,auto);justify-content:start;gap:22px}
-  .checks li{white-space:nowrap}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .stats li{flex-direction:column;gap:4px}
+  .hero-seal{width:120px;height:120px;font-size:12px}.hero-seal b{font-size:40px}
   .proof{margin-top:56px}
   .proof .lab{font-size:14px}
 }
@@ -318,11 +328,12 @@ footer .muted{opacity:.75}
     <div class="paws" style="right:6%;top:26px" aria-hidden="true"><svg><use href="#i-paw"/></svg><svg><use href="#i-paw"/></svg><svg><use href="#i-paw"/></svg></div>
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <span class="pill">CURSO COMPLETO</span>
-        <h1 id="titulo">Ele não faz pirraça. Ele está tentando <span class="hl">te dizer alguma coisa.</span></h1>
-        <p class="sub">Entenda o que seu cachorro sente e resolva xixi, latido, destruição, ansiedade, passeio e medo com o passo a passo que a ciência do comportamento recomenda. Sem bronca, sem grito, em poucos minutos por dia.</p>
+        <span class="pill">CURSO COMPLETO · 17 MÓDULOS + 3 BÔNUS</span>
+        <h1 id="titulo">O curso completo para <span class="hl">entender e educar seu cachorro</span></h1>
+        <p class="sub">17 módulos ilustrados, 3 bônus e um plano de 21 dias para resolver xixi, latido, destruição, ansiedade, passeio, porta e portão, fuga, medo de fogos, comandos, banho e veterinário, crianças e outros pets. Tudo com base científica, sem bronca e sem grito.</p>
       </div>
       <div class="hero-img">
+        <span class="hero-seal" aria-hidden="true"><b>17</b>módulos<br>+ 3 bônus</span>
         <img src="img/02-mockup-curso-livro-e-celular-640.webp"
              srcset="img/02-mockup-curso-livro-e-celular-640.webp 640w, img/02-mockup-curso-livro-e-celular.webp 1100w"
              sizes="(min-width: 900px) 520px, 92vw" width="1100" height="967" fetchpriority="high"
@@ -331,12 +342,13 @@ footer .muted{opacity:.75}
       <div class="hero-text">
         <div class="cta-block">
           <a class="btn buy" data-cta="topo" href="https://pay.kiwify.com.br/YmAgO0Y">Quero entender meu cachorro <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <p class="guarantee-line">Acesso imediato · Garantia de 7 dias · Pagamento seguro Kiwify</p>
+          <p class="guarantee-line"><strong>R$ 27</strong> à vista ou 3x de R$ 9,64 · Acesso imediato · Garantia de 7 dias</p>
         </div>
-        <ul class="checks">
-          <li><span class="ico" aria-hidden="true"><svg><use href="#i-check"/></svg></span>17 módulos ilustrados</li>
-          <li><span class="ico" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Plano de 21 dias</li>
-          <li><span class="ico" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Checklists para imprimir</li>
+        <ul class="stats" aria-label="O que vem no curso">
+          <li><b>17</b><span>módulos completos</span></li>
+          <li><b>3</b><span>bônus</span></li>
+          <li><b>21</b><span>dias de plano</span></li>
+          <li><b>+130</b><span>itens de checklist</span></li>
         </ul>
       </div>
     </div>
@@ -345,7 +357,7 @@ footer .muted{opacity:.75}
       <ul>
         <li><span class="num">+3 milhões</span><span class="lab">de visualizações nos vídeos</span></li>
         <li><span class="num">+10 mil</span><span class="lab">tutores acompanham o perfil</span></li>
-        <li><span class="num">17</span><span class="lab">módulos com base científica</span></li>
+        <li><span class="num">5 partes</span><span class="lab">da base ao dia a dia em família</span></li>
       </ul>
     </div>
   </section>
